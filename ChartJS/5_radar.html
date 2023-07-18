@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        figure {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <figure>
+        <canvas id="firstChart"></canvas>
+    </figure>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+    <script>
+
+        const chartData = {
+            labels: ['UNO', 'DOS', 'TRES', 'CUATRO'],
+            datasets: [{
+                data: [30, 60, 10, 40],
+                label: 'unidades',
+                backgroundColor: ['rgba(116, 72, 194, 0.4)', 'rgba(33, 192, 215, 0.4)', 'rgba(217, 158, 43, 0.4)', 'rgba(205, 58, 129, 0.4)'],
+                borderColor: ['rgba(116, 72, 194, 1)', 'rgba(33, 192, 215, 1)', 'rgba(217, 158, 43, 1)', 'rgba(205, 58, 129, 1)'],
+                borderWidth: 3
+            }]
+        }
+
+        const optionsData = {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+
+        new Chart('firstChart', { type: 'radar', data: chartData, options: optionsData })
+
+    </script>
+</body>
+
+</html>
